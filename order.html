@@ -1,13 +1,44 @@
 <head>
-  <title>order</title>
+  <title>Questions</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
 
   {{> main}}
+
 </body>
 
 <template name="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h1>Questions</h1>
+                <table class="table table-striped tabl-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <td> Question </td>
+                            <td> Answer </td>
+                            <td> Type </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each questions}}
+                        <tr>
+                            <td>{{question}}</td>
+                            <td>{{answer}}</td>
+                            <td>{{type}}</td>
+                        </tr>
+                        {{/each}}
 
+                        <tr>
+                         <td><input type="text" name="question" value="" id="question"></td> 
+                         <td><input type="text" name="answer" value="" id="answer"></td> 
+                         <td><input type="text" name="type" value="" id="type"></td> 
+                         <button id="save" value="save!" text="submit">Save</button>
+                        </tr>
+                 </tbody>
+             </table>
+         </div>
+     </div>
+ </div>
 </template>
